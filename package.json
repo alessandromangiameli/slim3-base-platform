@@ -1,0 +1,20 @@
+{
+  "name": "crossover",
+  "version": "1.0.0",
+  "description": "A simple slim3-based platform focused on building small websites",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alessandromangiameli/slim3-base-platform.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alessandromangiameli/slim3-base-platform/issues"
+  },
+  "homepage": "https://github.com/alessandromangiameli/slim3-base-platform#readme"
+}
