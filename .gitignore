@@ -4,3 +4,4 @@ vendor/*
 storage/views
 node_modules
 app.js
+public/dist
