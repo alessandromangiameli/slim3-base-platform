@@ -1,10 +1,13 @@
 const webpack = require('webpack');
 const path = require('path');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 module.exports = {
 	entry : {
 		app : [
-			'./src/main.js'
+			'./src/main.js',
+			'./src/main.scss'
 		]
 	},
 	output : {
@@ -13,8 +16,30 @@ module.exports = {
 		filename : '[name].js'
 	},
 	module: {
-	  rules: [
-	    { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" }
+	  rules : [
+	  	{
+	  		test : /\.s[ac]ss$/,
+	  		use : ExtractTextPlugin.extract({
+	  			use : ['css-loader','sass-loader'],
+	  			fallback : 'style-loader'
+	  		})
+	  	},
+	  	{
+	  		test : /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+	  		loader : 'file-loader',
+	  		options : {
+	  			name : 'images/[name].[hash].[ext]'
+	  		}
+	  	},
+	  	{ 
+	  		test: /\.js$/, 
+	  		exclude: /node_modules/, 
+	  		loader: "babel-loader" 
+	  	}
 	  ]
-	}
+	},
+	plugins : [
+		new CleanWebpackPlugin(['public/dist'], {}),
+		new ExtractTextPlugin('[name].css')
+	]
 } 
