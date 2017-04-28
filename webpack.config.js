@@ -1,7 +1,8 @@
 const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const CleanWebpackPlugin = require('clean-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
 	entry : {
@@ -40,6 +41,9 @@ module.exports = {
 	},
 	plugins : [
 		new CleanWebpackPlugin(['public/dist'], {}),
-		new ExtractTextPlugin('[name].css')
+		new ExtractTextPlugin('[name].css'),
+		new HtmlWebpackPlugin({
+			template : 'app/views/master.html'
+		})
 	]
 } 
