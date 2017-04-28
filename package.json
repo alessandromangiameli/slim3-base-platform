@@ -4,7 +4,7 @@
   "description": "A simple slim3-based platform focused on building small websites",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/alessandromangiameli/slim3-base-platform/issues"
   },
-  "homepage": "https://github.com/alessandromangiameli/slim3-base-platform#readme"
+  "homepage": "https://github.com/alessandromangiameli/slim3-base-platform#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "webpack": "^2.4.1"
+  }
 }

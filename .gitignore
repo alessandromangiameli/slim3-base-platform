@@ -2,3 +2,5 @@ vendor/*
 .env
 .phpintel
 storage/views
+node_modules
+app.js
